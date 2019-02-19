@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.example.assignment_two.MainActivity">
+    <item android:id="@+id/save"
+          android:title="@string/save"
+          android:orderInCategory="100"
+          app:showAsAction="collapseActionView"/>
+    <item android:title="@string/load" android:id="@+id/load" app:showAsAction="collapseActionView">
+        <menu
+        >
+            <item android:title="@string/c1" android:id="@+id/c1"/>
+            <item android:title="@string/c2" android:id="@+id/c2"/>
+        </menu>
+    </item>
+</menu>
