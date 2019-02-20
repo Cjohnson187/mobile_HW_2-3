@@ -8,8 +8,11 @@
     <string name="base">0</string>
     <string name="save">Save</string>
     <string name="load">Load</string>
-    <string name="c1">Saved 1</string>
-    <string name="c2">Saved 2</string>
-    <string name="c3">Saved 3</string>
+    <string name="s1">Saved 1</string>
+    <string name="s2">Saved 2</string>
+    <string name="s3">Saved 3</string>
+    <string name="l1">Saved 3</string>
+    <string name="l2">Saved 3</string>
+    <string name="l3">Saved 3</string>
     <string name="saved">Colors Saved</string>
 </resources>
