@@ -2,7 +2,7 @@ package com.example.assignment_two
 
 import android.graphics.Color.rgb
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.SeekBar
@@ -13,11 +13,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
+    var save1 = intArrayOf(0, 0, 0)
+    var save2 = intArrayOf(0, 0, 0)
+    var save3 = intArrayOf(0, 0, 0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
         val text1 = this.findViewById<TextView>(R.id.textB1)
         val text2 = this.findViewById<TextView>(R.id.textB2)
         val text3 = this.findViewById<TextView>(R.id.textB3)
@@ -90,10 +95,13 @@ class MainActivity : AppCompatActivity() {
         })
 
     }
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        //val button1 = this.findViewById<menuItem>()
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
-
+    //override fun onMenuItemClick(MenuItem item)
 
 }
