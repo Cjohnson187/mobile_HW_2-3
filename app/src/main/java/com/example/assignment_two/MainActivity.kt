@@ -24,6 +24,11 @@ class MainActivity : AppCompatActivity() {
     var value2 = 0
     var value3 = 0
 
+    //val but = findViewById<Button>(R.id.button)
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +44,8 @@ class MainActivity : AppCompatActivity() {
         val seekBar1 = this.findViewById<SeekBar>(R.id.seekBar1)
         val seekBar2 = this.findViewById<SeekBar>(R.id.seekBar2)
         val seekBar3 = this.findViewById<SeekBar>(R.id.seekBar3)
+
+        //val menu1 = this.onMenuItemClickListener
 
         val but = findViewById<Button>(R.id.button)
         but.setOnClickListener {
@@ -126,7 +133,7 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onMenuItemClick (item: MenuItem) {
+    /*fun onMenuItemClickListener (item: MenuItem) {
         when (item.itemId) {
             R.id.s1 ->  {
 
@@ -134,11 +141,33 @@ class MainActivity : AppCompatActivity() {
                 save1[1] = value2
                 save1[2] = value3
 
-                // Toast.makeText(this, value1, LENGTH_SHORT)
             }
 
         }
 
+    }*/
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.s1 -> {
+            save1[0] = value1
+            save1[1] = value2
+            save1[2] = value3
+
+            // User chose the "Settings" item, show the app settings UI...
+            true
+        }
+
+        R.id.s2 -> {
+            // User chose the "Favorite" action, mark the current item
+            // as a favorite...
+            true
+        }
+
+        else -> {
+            // If we got here, the user's action was not recognized.
+            // Invoke the superclass to handle it.
+            super.onOptionsItemSelected(item)
+        }
     }
 
 
