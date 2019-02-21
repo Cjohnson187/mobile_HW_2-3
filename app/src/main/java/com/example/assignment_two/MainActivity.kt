@@ -4,9 +4,12 @@ import android.graphics.Color.rgb
 import android.graphics.ColorFilter
 import android.os.Bundle
 import android.provider.CalendarContract
+import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.view.SurfaceView
 import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
@@ -30,12 +33,11 @@ class MainActivity : AppCompatActivity() {
     var value2 = 0 // variable to set surface view color  ( Green )
     var value3 = 0 // variable to set surface view color  ( Blue )
 
-    //val surface = this.surfaceView // create surface variable
-
     // initialize app
-    override fun onCreate(savedInstanceState: Bundle?) {
+     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //Toolbar toolbar =
 
         setSupportActionBar(toolbar)  // Menu item support
 
@@ -64,6 +66,8 @@ class MainActivity : AppCompatActivity() {
         text3.text = value3.toString() // convert to string just in case
 
         val surface = this.surfaceView // create surface variable
+
+
 
         //***************************************************************************
         // Seek bar 1 controls
@@ -116,6 +120,7 @@ class MainActivity : AppCompatActivity() {
     //***************************************************************
     // Method to make each buttons do something
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        //setSupport
 
         //**********************************************************
         // Save button 1
