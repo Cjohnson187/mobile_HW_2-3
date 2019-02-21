@@ -24,6 +24,7 @@ import kotlinx.android.synthetic.main.content_main.*
 // Main class
 class MainActivity : AppCompatActivity() {
 
+
     // global variables
     var save1 = intArrayOf(0, 0, 0) // array variable for save button vvalues
     var save2 = intArrayOf(0, 0, 0) // array variable for save button vvalues
@@ -32,6 +33,8 @@ class MainActivity : AppCompatActivity() {
     var value1 = 0 // variable to set surface view color  ( Red )
     var value2 = 0 // variable to set surface view color  ( Green )
     var value3 = 0 // variable to set surface view color  ( Blue )
+
+    var message: String = "new"
 
     // initialize app
      override fun onCreate(savedInstanceState: Bundle?) {
@@ -126,9 +129,14 @@ class MainActivity : AppCompatActivity() {
         // Save button 1
         R.id.s1 -> {
             // save each value to array slot for rgb format
+
             save1[0] = value1
             save1[1] = value2
             save1[2] = value3
+            //print("Type a name for the color")
+            //var m = readLine()
+            //print("you picked $m")
+            //message = m
 
             true
         }
