@@ -19,50 +19,49 @@ import kotlinx.android.synthetic.main.content_main.*
 
 //*****************************************************************
 // Main class
-
 class MainActivity : AppCompatActivity() {
-    var save1 = intArrayOf(0, 0, 0)
-    var save2 = intArrayOf(0, 0, 0)
-    var save3 = intArrayOf(0, 0, 0)
+
+    var save1 = intArrayOf(0, 0, 0) // array variable for save button vvalues
+    var save2 = intArrayOf(0, 0, 0) // array variable for save button vvalues
+    var save3 = intArrayOf(0, 0, 0) // array variable for save button vvalues
 
 
-    var value1 = 0
-    var value2 = 0
-    var value3 = 0
+    var value1 = 0 // variable to set surface view color  ( Red )
+    var value2 = 0 // variable to set surface view color  ( Green )
+    var value3 = 0 // variable to set surface view color  ( Blue )
 
-
+    // initialize app
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
-        //setHasOptionsMenu(true)
 
-        val text1 = this.findViewById<TextView>(R.id.textB1)
-        val text2 = this.findViewById<TextView>(R.id.textB2)
-        val text3 = this.findViewById<TextView>(R.id.textB3)
+        setSupportActionBar(toolbar)  // Menu item support
 
-        val seekBar1 = this.findViewById<SeekBar>(R.id.seekBar1)
-        val seekBar2 = this.findViewById<SeekBar>(R.id.seekBar2)
-        val seekBar3 = this.findViewById<SeekBar>(R.id.seekBar3)
+        val text1 = this.findViewById<TextView>(R.id.textB1) // text field to show seek values
+        val text2 = this.findViewById<TextView>(R.id.textB2) // text field to show seek values
+        val text3 = this.findViewById<TextView>(R.id.textB3) // text field to show seek values
 
-        //val menu1 = this.onMenuItemClickListener
+        val seekBar1 = this.findViewById<SeekBar>(R.id.seekBar1) // seek bar var
+        val seekBar2 = this.findViewById<SeekBar>(R.id.seekBar2) // seek bar var
+        val seekBar3 = this.findViewById<SeekBar>(R.id.seekBar3) // seek bar var
 
+        // ***********************************************************************
+        // button to test loading before making load buttons
         val but = findViewById<Button>(R.id.button)
         but.setOnClickListener {
             Toast.makeText(this, save2[1].toString(), LENGTH_SHORT).show()
-
         }
+        // ***********************************************************************
 
         seekBar1.progress = value1 // set variable to seek bar value
         seekBar2.progress = value2 // set variable to seek bar value
         seekBar3.progress = value3 // set variable to seek bar value
 
-        text1.text = value1.toString()
-        text2.text = value2.toString()
-        text3.text = value3.toString()
+        text1.text = value1.toString() // convert to string just in case
+        text2.text = value2.toString() // convert to string just in case
+        text3.text = value3.toString() // convert to string just in case
 
-        val surface = this.surfaceView
+        val surface = this.surfaceView // create surface variable
 
         //***************************************************************************
         // Seek bar 1 controls
@@ -102,7 +101,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
         //***************************************************************************
-    } // End of seek bar controls
+
+    } // End of on_Create
 
     //***************************************************************
     // Method to expand menu bar
@@ -118,6 +118,7 @@ class MainActivity : AppCompatActivity() {
         //**********************************************************
         // Save button 1
         R.id.s1 -> {
+            // save each value to array slot for rgb format
             save1[0] = value1
             save1[1] = value2
             save1[2] = value3
@@ -128,6 +129,7 @@ class MainActivity : AppCompatActivity() {
         //**********************************************************
         // Save button 2
         R.id.s2 -> {
+            // save each value to array slot for rgb format
             save2[0] = value1
             save2[1] = value2
             save2[2] = value3
@@ -137,12 +139,22 @@ class MainActivity : AppCompatActivity() {
         //**********************************************************
         // Save button 3
         R.id.s3 -> {
+            // save each value to array slot for rgb format
             save3[0] = value1
             save3[1] = value2
             save3[2] = value3
 
             true
         }
+        //**********************************************************
+        // make load button 1 action
+        //**********************************************************
+        // make load button 2 action
+        //**********************************************************
+        // make load button 3 action
+        //**********************************************************
+
+
 
         //**********************************************************
         // if action was not recognized, invoke super class
@@ -152,9 +164,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         //*****************_End of button commands_*****************
-    }
+
+    } // end on_Option_Item_Selected
 
     //**************************************************************
 
-
-}
+}// end of main class
