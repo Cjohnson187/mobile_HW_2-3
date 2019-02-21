@@ -21,14 +21,16 @@ import kotlinx.android.synthetic.main.content_main.*
 // Main class
 class MainActivity : AppCompatActivity() {
 
+    // global variables
     var save1 = intArrayOf(0, 0, 0) // array variable for save button vvalues
     var save2 = intArrayOf(0, 0, 0) // array variable for save button vvalues
     var save3 = intArrayOf(0, 0, 0) // array variable for save button vvalues
 
-
     var value1 = 0 // variable to set surface view color  ( Red )
     var value2 = 0 // variable to set surface view color  ( Green )
     var value3 = 0 // variable to set surface view color  ( Blue )
+
+    //val surface = this.surfaceView // create surface variable
 
     // initialize app
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,10 +49,10 @@ class MainActivity : AppCompatActivity() {
 
         // ***********************************************************************
         // button to test loading before making load buttons
-        val but = findViewById<Button>(R.id.button)
-        but.setOnClickListener {
-            Toast.makeText(this, save2[1].toString(), LENGTH_SHORT).show()
-        }
+        //val but = findViewById<Button>(R.id.button)
+        //but.setOnClickListener {
+          //  Toast.makeText(this, save2[1].toString(), LENGTH_SHORT).show()
+        //}
         // ***********************************************************************
 
         seekBar1.progress = value1 // set variable to seek bar value
@@ -148,10 +150,46 @@ class MainActivity : AppCompatActivity() {
         }
         //**********************************************************
         // make load button 1 action
+        R.id.l1 -> {
+            // save each value to array slot for rgb format
+            //surface.setBackgroundColor(rgb(save1[0], save1[1], save1[2]))
+
+            //save3[0] = value1
+            //save3[1] = value2
+            //save3[2] = value3
+
+            true
+        }
+
+
+
         //**********************************************************
         // make load button 2 action
+        R.id.l2 -> {
+            // save each value to array slot for rgb format
+            //surface.setBackgroundColor(rgb(save2[0], save2[1], save2[2]))
+
+
+            //save3[0] = value1
+            //save3[1] = value2
+            //save3[2] = value3
+
+            true
+        }
+
         //**********************************************************
         // make load button 3 action
+        R.id.l3 -> {
+            // save each value to array slot for rgb format
+            //surface.setBackgroundColor(rgb(save3[0], save3[1], save3[2]))
+
+            //save3[0] = value1
+            //save3[1] = value2
+            //save3[2] = value3
+
+            true
+        }
+
         //**********************************************************
 
 
