@@ -6,5 +6,7 @@
           android:title="@string/save"
           android:orderInCategory="100"
           app:showAsAction="ifRoom"/>
-    <item android:title="@string/load" android:id="@+id/load" app:showAsAction="ifRoom"/>
+    <item android:title="@string/load"
+          android:id="@+id/load"
+          app:showAsAction="ifRoom"/>
 </menu>

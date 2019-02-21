@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.content_main.*
 //*****************************************************************
 // Main class
 class MainActivity : AppCompatActivity() {
+    lateinit var editText : EditText
 
 
 
@@ -133,17 +134,39 @@ class MainActivity : AppCompatActivity() {
         // Save button
         R.id.save -> {
 
-            // save each value to array slot for rgb format
-           // val
+            //var userInput = editText.text.toString()
 
-            save1[0] = value1
-            save1[1] = value2
-            save1[2] = value3
+            var save = intArrayOf(0, 0, 0) // array variable for save button values
+
+            //var editText = findViewById(R.id.editText)
+
+            var textField = this.input
+
+            //val saveM = Toast.makeText(applicationContext, "Name Your Color", Toast.LENGTH_LONG)
+            //saveM.show()
+
+            //textField.setVisible(true)
+            var colorName = textField.text.toString()
+            //var userInput = editText.text.toString()
+
+            val saveS = Toast.makeText(applicationContext, "$colorName", Toast.LENGTH_LONG)
+            saveS.show()
+
+
+
+
+            // save each value to array slot for rgb format
+
+            save[0] = value1
+            save[1] = value2
+            save[2] = value3
 
 
             //val spin : Spinner =findViewById(R.id.spinner)
-            val write = Toast.makeText(applicationContext, "$value1[0]", Toast.LENGTH_LONG)
-            write.show()
+            //val saveM = Toast.makeText(applicationContext, "Name your color.", Toast.LENGTH_LONG)
+            //saveM.show()
+
+            //val write = input
 
             //print("Type a name for the color")
             //var m = readLine()
@@ -156,6 +179,9 @@ class MainActivity : AppCompatActivity() {
         //**********************************************************
         // load button
         R.id.load -> {
+
+            val surface1 = this.surfaceView // create surface variable
+
             // save each value to array slot for rgb format
             save2[0] = value1
             save2[1] = value2
