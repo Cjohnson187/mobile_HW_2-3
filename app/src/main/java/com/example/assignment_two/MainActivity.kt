@@ -10,10 +10,7 @@ import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.SurfaceView
-import android.widget.Button
-import android.widget.SeekBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import android.widget.Toast.LENGTH_SHORT
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -25,23 +22,29 @@ import kotlinx.android.synthetic.main.content_main.*
 class MainActivity : AppCompatActivity() {
 
 
+
     // global variables
     var save1 = intArrayOf(0, 0, 0) // array variable for save button vvalues
     var save2 = intArrayOf(0, 0, 0) // array variable for save button vvalues
     var save3 = intArrayOf(0, 0, 0) // array variable for save button vvalues
 
-    var value1 = 0 // variable to set surface view color  ( Red )
+    var value1 = 0 // variable to set sugit rface view color  ( Red )
     var value2 = 0 // variable to set surface view color  ( Green )
-    var value3 = 0 // variable to set surface view color  ( Blue )
+    var value3 = 0 // variable to set surface view color  ( Bl:ue )
 
-    var message: String = "new"
+    //val surface1:SurfaceView? = null
+
+    //var message: String = "new"
+
+   // var surface1: SurfaceView = findViewById(R.id.surfaceView)
+
+   // var spinner1 = this.findViewById<Spinner>(R.id.spinner)
+
 
     // initialize app
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //Toolbar toolbar =
-
         setSupportActionBar(toolbar)  // Menu item support
 
         val text1 = this.findViewById<TextView>(R.id.textB1) // text field to show seek values
@@ -68,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         text2.text = value2.toString() // convert to string just in case
         text3.text = value3.toString() // convert to string just in case
 
-        val surface = this.surfaceView // create surface variable
+        val surface1 = this.surfaceView // create surface variable
 
 
 
@@ -81,7 +84,7 @@ class MainActivity : AppCompatActivity() {
                 value1 = i
                 text1.text = "$value1"
                 text1.setTextColor(rgb(value1, 0, 0))
-                surface.setBackgroundColor(rgb(value1, value2, value3))
+                surface1.setBackgroundColor(rgb(value1, value2, value3))
             }
         })
         //****************************************************************************
@@ -94,7 +97,8 @@ class MainActivity : AppCompatActivity() {
                 value2 = i
                 text2.text = "$value2"
                 text2.setTextColor(rgb(0, value2, 0))
-                surface.setBackgroundColor(rgb(value1, value2, value3))
+                //surface1.setBackgroundColor()
+                surface1.setBackgroundColor(rgb(value1, value2, value3))
             }
         })
         //***************************************************************************
@@ -106,7 +110,7 @@ class MainActivity : AppCompatActivity() {
                 value3 = i
                 text3.text = "$value3"
                 text3.setTextColor(rgb(0, 0, value3))
-                surface.setBackgroundColor(rgb(value1, value2, value3))
+                surface1.setBackgroundColor(rgb(value1, value2, value3))
             }
         })
         //***************************************************************************
@@ -123,16 +127,24 @@ class MainActivity : AppCompatActivity() {
     //***************************************************************
     // Method to make each buttons do something
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        //setSupport
+
 
         //**********************************************************
-        // Save button 1
-        R.id.s1 -> {
+        // Save button
+        R.id.save -> {
+
             // save each value to array slot for rgb format
+           // val
 
             save1[0] = value1
             save1[1] = value2
             save1[2] = value3
+
+
+            //val spin : Spinner =findViewById(R.id.spinner)
+            val write = Toast.makeText(applicationContext, "$value1[0]", Toast.LENGTH_LONG)
+            write.show()
+
             //print("Type a name for the color")
             //var m = readLine()
             //print("you picked $m")
@@ -142,63 +154,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         //**********************************************************
-        // Save button 2
-        R.id.s2 -> {
+        // load button
+        R.id.load -> {
             // save each value to array slot for rgb format
             save2[0] = value1
             save2[1] = value2
             save2[2] = value3
-
-            true
-        }
-        //**********************************************************
-        // Save button 3
-        R.id.s3 -> {
-            // save each value to array slot for rgb format
-            save3[0] = value1
-            save3[1] = value2
-            save3[2] = value3
-
-            true
-        }
-        //**********************************************************
-        // make load button 1 action
-        R.id.l1 -> {
-            // save each value to array slot for rgb format
-            //surface.setBackgroundColor(rgb(save1[0], save1[1], save1[2]))
-
-            //save3[0] = value1
-            //save3[1] = value2
-            //save3[2] = value3
-
-            true
-        }
-
-
-
-        //**********************************************************
-        // make load button 2 action
-        R.id.l2 -> {
-            // save each value to array slot for rgb format
-            //surface.setBackgroundColor(rgb(save2[0], save2[1], save2[2]))
-
-
-            //save3[0] = value1
-            //save3[1] = value2
-            //save3[2] = value3
-
-            true
-        }
-
-        //**********************************************************
-        // make load button 3 action
-        R.id.l3 -> {
-            // save each value to array slot for rgb format
-            //surface.setBackgroundColor(rgb(save3[0], save3[1], save3[2]))
-
-            //save3[0] = value1
-            //save3[1] = value2
-            //save3[2] = value3
 
             true
         }
@@ -214,7 +175,9 @@ class MainActivity : AppCompatActivity() {
             super.onOptionsItemSelected(item)
         }
 
+
         //*****************_End of button commands_*****************
+
 
     } // end on_Option_Item_Selected
 
