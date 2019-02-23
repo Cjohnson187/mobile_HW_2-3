@@ -1,5 +1,6 @@
 package com.example.assignment_two
 
+import android.graphics.Color.RGBToHSV
 import android.graphics.Color.rgb
 import android.graphics.ColorFilter
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.SurfaceView
+import android.view.View
 import android.widget.*
 import android.widget.Toast.LENGTH_SHORT
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,18 +22,18 @@ import kotlinx.android.synthetic.main.content_main.*
 //*****************************************************************
 // Main class
 class MainActivity : AppCompatActivity() {
-    lateinit var editText : EditText
+    //lateinit var editText : EditText
 
-
-
-    // global variables
-    var save1 = intArrayOf(0, 0, 0) // array variable for save button vvalues
-    var save2 = intArrayOf(0, 0, 0) // array variable for save button vvalues
-    var save3 = intArrayOf(0, 0, 0) // array variable for save button vvalues
-
-    var value1 = 0 // variable to set sugit rface view color  ( Red )
+    var value1 = 0 // variable to set surface view color  ( Red )
     var value2 = 0 // variable to set surface view color  ( Green )
     var value3 = 0 // variable to set surface view color  ( Bl:ue )
+
+    var save1 = arrayOf("new", "0", "0", "0") // array variable for save button values
+    var save2 = arrayOf("new", "0", "0", "0") // array variable for save button values
+    var save3 = arrayOf("new", "0", "0", "0") // array variable for save button values
+
+    var colorName = ("none")
+
 
     //val surface1:SurfaceView? = null
 
@@ -57,12 +59,6 @@ class MainActivity : AppCompatActivity() {
         val seekBar3 = this.findViewById<SeekBar>(R.id.seekBar3) // seek bar var
 
         // ***********************************************************************
-        // button to test loading before making load buttons
-        //val but = findViewById<Button>(R.id.button)
-        //but.setOnClickListener {
-          //  Toast.makeText(this, save2[1].toString(), LENGTH_SHORT).show()
-        //}
-        // ***********************************************************************
 
         seekBar1.progress = value1 // set variable to seek bar value
         seekBar2.progress = value2 // set variable to seek bar value
@@ -73,8 +69,6 @@ class MainActivity : AppCompatActivity() {
         text3.text = value3.toString() // convert to string just in case
 
         val surface1 = this.surfaceView // create surface variable
-
-
 
         //***************************************************************************
         // Seek bar 1 controls
@@ -134,58 +128,72 @@ class MainActivity : AppCompatActivity() {
         // Save button
         R.id.save -> {
 
-            //var userInput = editText.text.toString()
+            input.visibility = View.VISIBLE
+            //input.read
 
-            var save = intArrayOf(0, 0, 0) // array variable for save button values
 
-            //var editText = findViewById(R.id.editText)
 
-            var textField = this.input
+            //var textField = editText.text
+            //input.
 
-            //val saveM = Toast.makeText(applicationContext, "Name Your Color", Toast.LENGTH_LONG)
-            //saveM.show()
 
-            //textField.setVisible(true)
-            var colorName = textField.text.toString()
-            //var userInput = editText.text.toString()
+            var textField = input.text
+
+
+            colorName = textField.toString()
 
             val saveS = Toast.makeText(applicationContext, "$colorName", Toast.LENGTH_LONG)
             saveS.show()
 
-
-
-
             // save each value to array slot for rgb format
+            save1[0] = colorName
+            save1[1] = value1.toString()
+            save1[2] = value2.toString()
+            save1[3] = value3.toString()
 
-            save[0] = value1
-            save[1] = value2
-            save[2] = value3
+            input.visibility = View.INVISIBLE
 
 
-            //val spin : Spinner =findViewById(R.id.spinner)
-            //val saveM = Toast.makeText(applicationContext, "Name your color.", Toast.LENGTH_LONG)
-            //saveM.show()
-
-            //val write = input
-
-            //print("Type a name for the color")
-            //var m = readLine()
-            //print("you picked $m")
-            //message = m
 
             true
         }
+
+       /* R.id.save -> {
+
+            //var textField = this.input
+
+            //var colorName = textField.text.toString()
+
+            input.visibility = View.INVISIBLE
+
+
+            val saveS = Toast.makeText(applicationContext, "$colorName", Toast.LENGTH_LONG)
+            saveS.show()
+
+            // save each value to array slot for rgb format
+            save1[0] = colorName
+            save1[1] = value1.toString()
+            save1[2] = value2.toString()
+            save1[3] = value3.toString()
+
+
+            true
+        }*/
 
         //**********************************************************
         // load button
         R.id.load -> {
 
+            val spin : Spinner =findViewById(R.id.spinner)
+
+
+
+
             val surface1 = this.surfaceView // create surface variable
 
-            // save each value to array slot for rgb format
-            save2[0] = value1
-            save2[1] = value2
-            save2[2] = value3
+
+            surface1.setBackgroundColor(rgb(save1[1].toInt(),save1[2].toInt(),save1[3].toInt()))
+
 
             true
         }
@@ -203,7 +211,6 @@ class MainActivity : AppCompatActivity() {
 
 
         //*****************_End of button commands_*****************
-
 
     } // end on_Option_Item_Selected
 
