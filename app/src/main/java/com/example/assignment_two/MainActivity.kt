@@ -160,17 +160,11 @@ class MainActivity : AppCompatActivity() {
         R.id.l1 -> {
 
             //val spin : Spinner =findViewById(R.id.spinner)
-
-
-
-
             val surface1 = this.surfaceView // create surface variable
 
             val text1 = this.findViewById<TextView>(R.id.textB1) // text field to show seek values
             val text2 = this.findViewById<TextView>(R.id.textB2) // text field to show seek values
             val text3 = this.findViewById<TextView>(R.id.textB3) // text field to show seek values
-
-
 
             value1 = save1[1].toInt()
             value2 = save1[2].toInt()
@@ -184,18 +178,11 @@ class MainActivity : AppCompatActivity() {
             text2.text = "$value2"
             text3.text = "$value3"
 
-
-
             text1.setTextColor(rgb(value1, 0, 0))
             text2.setTextColor(rgb(0, value2, 0))
             text3.setTextColor(rgb(0, 0, value3))
 
-
-
-
-
             surface1.setBackgroundColor(rgb(save1[1].toInt(),save1[2].toInt(),save1[3].toInt()))
-
 
             true
         }
@@ -205,16 +192,11 @@ class MainActivity : AppCompatActivity() {
 
             //val spin : Spinner =findViewById(R.id.spinner)
 
-
-
-
             val surface1 = this.surfaceView // create surface variable
 
             val text1 = this.findViewById<TextView>(R.id.textB1) // text field to show seek values
             val text2 = this.findViewById<TextView>(R.id.textB2) // text field to show seek values
             val text3 = this.findViewById<TextView>(R.id.textB3) // text field to show seek values
-
-
 
             value1 = save1[1].toInt()
             value2 = save1[2].toInt()
@@ -228,23 +210,15 @@ class MainActivity : AppCompatActivity() {
             text2.text = "$value2"
             text3.text = "$value3"
 
-
-
             text1.setTextColor(rgb(value1, 0, 0))
             text2.setTextColor(rgb(0, value2, 0))
             text3.setTextColor(rgb(0, 0, value3))
-
-
-
-
 
             surface1.setBackgroundColor(rgb(save1[1].toInt(),save1[2].toInt(),save1[3].toInt()))
 
 
             true
         }
-
-
 
         //**********************************************************
         R.id.l3 -> {
@@ -289,20 +263,56 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
+        //**********************************************************
+        R.id.d1 -> {
+
+            save1[0] = "new"
+            save1[1] = "0"
+            save1[2] = "0"
+            save1[3] = "0"
+
+
+
+            true
+        }
 
         //**********************************************************
+        R.id.d2 -> {
+
+            save2[0] = "new"
+            save2[1] = "0"
+            save2[2] = "0"
+            save2[3] = "0"
 
 
+
+            true
+        }
+
+        //**********************************************************
+        R.id.d3 -> {
+
+            save3[0] = "new"
+            save3[1] = "0"
+            save3[2] = "0"
+            save3[3] = "0"
+
+
+
+            true
+        }
+
+        //**********************************************************
         // if action was not recognized, invoke super class
 
         else -> {
             super.onOptionsItemSelected(item)
         }
 
-
         //*****************_End of button commands_*****************
 
     } // end on_Option_Item_Selected
+
 
     //**************************************************************
 
