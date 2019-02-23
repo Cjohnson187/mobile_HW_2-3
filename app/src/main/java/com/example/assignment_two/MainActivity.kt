@@ -92,7 +92,6 @@ class MainActivity : AppCompatActivity() {
                 value2 = i
                 text2.text = "$value2"
                 text2.setTextColor(rgb(0, value2, 0))
-                //surface1.setBackgroundColor()
                 surface1.setBackgroundColor(rgb(value1, value2, value3))
             }
         })
@@ -153,43 +152,136 @@ class MainActivity : AppCompatActivity() {
 
             input.visibility = View.INVISIBLE
 
-
-
             true
         }
 
-       /* R.id.save -> {
-
-            //var textField = this.input
-
-            //var colorName = textField.text.toString()
-
-            input.visibility = View.INVISIBLE
-
-
-            val saveS = Toast.makeText(applicationContext, "$colorName", Toast.LENGTH_LONG)
-            saveS.show()
-
-            // save each value to array slot for rgb format
-            save1[0] = colorName
-            save1[1] = value1.toString()
-            save1[2] = value2.toString()
-            save1[3] = value3.toString()
-
-
-            true
-        }*/
-
         //**********************************************************
         // load button
-        R.id.load -> {
+        R.id.l1 -> {
 
-            val spin : Spinner =findViewById(R.id.spinner)
+            //val spin : Spinner =findViewById(R.id.spinner)
 
 
 
 
             val surface1 = this.surfaceView // create surface variable
+
+            val text1 = this.findViewById<TextView>(R.id.textB1) // text field to show seek values
+            val text2 = this.findViewById<TextView>(R.id.textB2) // text field to show seek values
+            val text3 = this.findViewById<TextView>(R.id.textB3) // text field to show seek values
+
+
+
+            value1 = save1[1].toInt()
+            value2 = save1[2].toInt()
+            value3 = save1[3].toInt()
+
+            seekBar1.progress = value1 // set variable to seek bar value
+            seekBar2.progress = value2 // set variable to seek bar value
+            seekBar3.progress = value3 // set variable to seek bar value
+
+            text1.text = "$value1"
+            text2.text = "$value2"
+            text3.text = "$value3"
+
+
+
+            text1.setTextColor(rgb(value1, 0, 0))
+            text2.setTextColor(rgb(0, value2, 0))
+            text3.setTextColor(rgb(0, 0, value3))
+
+
+
+
+
+            surface1.setBackgroundColor(rgb(save1[1].toInt(),save1[2].toInt(),save1[3].toInt()))
+
+
+            true
+        }
+
+        //**********************************************************
+        R.id.l2 -> {
+
+            //val spin : Spinner =findViewById(R.id.spinner)
+
+
+
+
+            val surface1 = this.surfaceView // create surface variable
+
+            val text1 = this.findViewById<TextView>(R.id.textB1) // text field to show seek values
+            val text2 = this.findViewById<TextView>(R.id.textB2) // text field to show seek values
+            val text3 = this.findViewById<TextView>(R.id.textB3) // text field to show seek values
+
+
+
+            value1 = save1[1].toInt()
+            value2 = save1[2].toInt()
+            value3 = save1[3].toInt()
+
+            seekBar1.progress = value1 // set variable to seek bar value
+            seekBar2.progress = value2 // set variable to seek bar value
+            seekBar3.progress = value3 // set variable to seek bar value
+
+            text1.text = "$value1"
+            text2.text = "$value2"
+            text3.text = "$value3"
+
+
+
+            text1.setTextColor(rgb(value1, 0, 0))
+            text2.setTextColor(rgb(0, value2, 0))
+            text3.setTextColor(rgb(0, 0, value3))
+
+
+
+
+
+            surface1.setBackgroundColor(rgb(save1[1].toInt(),save1[2].toInt(),save1[3].toInt()))
+
+
+            true
+        }
+
+
+
+        //**********************************************************
+        R.id.l3 -> {
+
+            //val spin : Spinner =findViewById(R.id.spinner)
+
+
+
+
+            val surface1 = this.surfaceView // create surface variable
+
+            val text1 = this.findViewById<TextView>(R.id.textB1) // text field to show seek values
+            val text2 = this.findViewById<TextView>(R.id.textB2) // text field to show seek values
+            val text3 = this.findViewById<TextView>(R.id.textB3) // text field to show seek values
+
+
+
+            value1 = save1[1].toInt()
+            value2 = save1[2].toInt()
+            value3 = save1[3].toInt()
+
+            seekBar1.progress = value1 // set variable to seek bar value
+            seekBar2.progress = value2 // set variable to seek bar value
+            seekBar3.progress = value3 // set variable to seek bar value
+
+            text1.text = "$value1"
+            text2.text = "$value2"
+            text3.text = "$value3"
+
+
+
+            text1.setTextColor(rgb(value1, 0, 0))
+            text2.setTextColor(rgb(0, value2, 0))
+            text3.setTextColor(rgb(0, 0, value3))
+
+
+
 
 
             surface1.setBackgroundColor(rgb(save1[1].toInt(),save1[2].toInt(),save1[3].toInt()))
@@ -201,8 +293,6 @@ class MainActivity : AppCompatActivity() {
         //**********************************************************
 
 
-
-        //**********************************************************
         // if action was not recognized, invoke super class
 
         else -> {
