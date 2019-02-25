@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     var save2 = arrayOf("new", "0", "0", "0") // array variable for save button values
     var save3 = arrayOf("new", "0", "0", "0") // array variable for save button values
 
-    var colorName = ("none")
+    var colorName = ""
 
 
     //val surface1:SurfaceView? = null
@@ -127,7 +127,12 @@ class MainActivity : AppCompatActivity() {
         // Save button
         R.id.save -> {
 
+            var textField = input.text
+
             input.visibility = View.VISIBLE
+
+            //colorName = readLine()!!
+            //println("you entered $colorName")
             //input.read
 
 
@@ -136,7 +141,7 @@ class MainActivity : AppCompatActivity() {
             //input.
 
 
-            var textField = input.text
+            //var textField = input.text
 
 
             colorName = textField.toString()
