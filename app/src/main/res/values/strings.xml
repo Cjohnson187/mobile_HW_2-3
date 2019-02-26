@@ -17,4 +17,5 @@
     <string name="clear">Delete</string>
     <string name="saved">Colors Saved</string>
     <string name="nameColor">Name Your Color</string>
+    <string name="confirm">Save</string>
 </resources>

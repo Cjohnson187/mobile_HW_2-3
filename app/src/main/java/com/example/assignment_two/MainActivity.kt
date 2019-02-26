@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
     var save2 = arrayOf("new", "0", "0", "0") // array variable for save button values
     var save3 = arrayOf("new", "0", "0", "0") // array variable for save button values
 
+    val saveM = this.menuI
+
     var colorName = ""
 
 
@@ -128,12 +130,34 @@ class MainActivity : AppCompatActivity() {
         R.id.save -> {
 
             var textField = input.text
+            var saveC = this.findViewById<Button>(R.id.confirm)
 
             input.visibility = View.VISIBLE
+            saveC.visibility = View.VISIBLE
 
             //colorName = readLine()!!
             //println("you entered $colorName")
             //input.read
+            saveC.setOnClickListener {
+
+                colorName = textField.toString()
+                val saveS = Toast.makeText(applicationContext, "$colorName" + " saved", Toast.LENGTH_LONG)
+                saveS.show()
+
+                // save each value to array slot for rgb format
+                save1[0] = colorName
+                save1[1] = value1.toString()
+                save1[2] = value2.toString()
+                save1[3] = value3.toString()
+
+                input.visibility = View.INVISIBLE
+                saveC.visibility = View.INVISIBLE
+
+
+                //save.getElementById(save).innerHTML = colorName
+
+
+            }
 
 
 
@@ -143,7 +167,7 @@ class MainActivity : AppCompatActivity() {
 
             //var textField = input.text
 
-
+/*
             colorName = textField.toString()
 
             val saveS = Toast.makeText(applicationContext, "$colorName", Toast.LENGTH_LONG)
@@ -156,6 +180,7 @@ class MainActivity : AppCompatActivity() {
             save1[3] = value3.toString()
 
             input.visibility = View.INVISIBLE
+            */
 
             true
         }
