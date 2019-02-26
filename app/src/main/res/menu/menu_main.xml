@@ -8,18 +8,5 @@
           app:showAsAction="ifRoom|collapseActionView"/>
     <item android:title="@string/load"
           android:id="@+id/load"
-          app:showAsAction="collapseActionView">
-        <menu>
-            <item android:title="@string/l1" android:id="@+id/l1"/>
-            <item android:title="@string/l2" android:id="@+id/l2"/>
-            <item android:title="@string/l3" android:id="@+id/l3"/>
-        </menu>
-    </item>
-    <item android:title="@string/clear" android:id="@+id/clear">
-        <menu>
-            <item android:title="@string/l1" android:id="@+id/d1"/>
-            <item android:title="@string/l2" android:id="@+id/d2"/>
-            <item android:title="@string/l3" android:id="@+id/d3"/>
-        </menu>
-    </item>
+          app:showAsAction="ifRoom"/>
 </menu>
