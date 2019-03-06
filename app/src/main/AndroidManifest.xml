@@ -20,6 +20,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="com.example.assignment_two.ACTION_COLOR"/>
+
+                <category android:name="android.intent.category.DEFAULTR"/>
+            </intent-filter>
+
         </activity>
     </application>
 
