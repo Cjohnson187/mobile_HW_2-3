@@ -24,7 +24,7 @@
             <intent-filter>
                 <action android:name="com.example.assignment_two.ACTION_COLOR"/>
 
-                <category android:name="android.intent.category.DEFAULTR"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
 
         </activity>
