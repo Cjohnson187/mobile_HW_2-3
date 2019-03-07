@@ -1,5 +1,6 @@
 package com.example.assignment_two
 
+import android.app.Activity
 import android.graphics.Color.RGBToHSV
 import android.graphics.Color.rgb
 import android.graphics.ColorFilter
@@ -18,6 +19,9 @@ import android.widget.Toast.LENGTH_SHORT
 import kotlinx.android.synthetic.main.activity_main.*
 
 import kotlinx.android.synthetic.main.content_main.*
+import android.content.Intent
+
+
 
 
 //*****************************************************************
@@ -41,6 +45,8 @@ class MainActivity : AppCompatActivity() {
     //val slot2 = button.findViewById<Button>(R.id.button)
    // val slot3 = button.findViewById<Button>(R.id.button3)
 
+    //verride fun Inten
+
 
 
     // initialize app
@@ -48,6 +54,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)  // Menu item support
+
+        val button = findViewById<Button>(R.id.done)
 
 
         //************************************************************
@@ -77,6 +85,19 @@ class MainActivity : AppCompatActivity() {
         text3.text = value3.toString() // convert to string just in case
 
         val surface1 = this.surfaceView // create surface variable
+        val result1 = intArrayOf(0,0,0)
+
+        button.setOnClickListener {
+            result1[0] = value1
+            result1[1] = value2
+            result1[2] = value3
+
+
+            val returnIntent = Intent()
+            returnIntent.putExtra("result", result1)
+            setResult(Activity.RESULT_OK,returnIntent)
+            finish()
+        }
 
         //***************************************************************************
         // Seek bar 1 controls
