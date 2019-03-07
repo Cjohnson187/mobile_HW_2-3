@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         text3.text = value3.toString() // convert to string just in case
 
         val surface1 = this.surfaceView // create surface variable
-        val result1 = intArrayOf(0,0,0)
+        val result1 = arrayListOf(0,0,0)
 
         button.setOnClickListener {
             result1[0] = value1
@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
 
 
             val returnIntent = Intent()
-            returnIntent.putExtra("result", "91")
+            returnIntent.putIntegerArrayListExtra("result", result1)
             setResult(Activity.RESULT_OK, returnIntent)
             finish()
         }
