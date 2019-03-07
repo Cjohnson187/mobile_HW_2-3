@@ -94,8 +94,6 @@ class MainActivity : AppCompatActivity() {
             result1[1] = value2
             result1[2] = value3
 
-
-
             val returnIntent = Intent()
             returnIntent.putIntegerArrayListExtra("result", result1)
             setResult(Activity.RESULT_OK, returnIntent)
@@ -142,6 +140,14 @@ class MainActivity : AppCompatActivity() {
         //***************************************************************************
 
     } // End of on_Create
+/*
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        val button = findViewById<Button>(R.id.done)
+        button.visibility = View.INVISIBLE
+
+
+    }*/
 
     //***************************************************************
     // Method to expand menu bar
