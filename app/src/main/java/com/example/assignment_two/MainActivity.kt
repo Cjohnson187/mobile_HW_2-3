@@ -58,6 +58,8 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.done)
 
 
+
+
         //************************************************************
 
 
@@ -93,9 +95,10 @@ class MainActivity : AppCompatActivity() {
             result1[2] = value3
 
 
+
             val returnIntent = Intent()
-            returnIntent.putExtra("result", result1)
-            setResult(Activity.RESULT_OK,returnIntent)
+            returnIntent.putExtra("result", "91")
+            setResult(Activity.RESULT_OK, returnIntent)
             finish()
         }
 
